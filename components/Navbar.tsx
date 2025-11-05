@@ -12,6 +12,7 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'หน้าแรก' },
     { href: '/about', label: 'เกี่ยวกับ' },
+    { href: '/guestion', label: 'คำถาม' },
     { href: '/contact', label: 'ติดต่อ' },
   ];
 
