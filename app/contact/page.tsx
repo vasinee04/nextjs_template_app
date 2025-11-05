@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, MessageCircle, MapPin, Send } from 'lucide-react';
+import { Mail, MessageCircle, MapPin, Send, Phone, Facebook, Instagram } from 'lucide-react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -46,22 +46,40 @@ export default function Contact() {
             <ContactInfoCard
               icon={<Mail className="w-6 h-6" />}
               title="อีเมล"
-              content="somejeed@example.com"
+              content="vasineemalit2546@gmail.com"
+              link="mailto:vasineemalit2546@gmail.com"
               gradient="from-pink-500 to-pink-600"
             />
             
             <ContactInfoCard
-              icon={<MessageCircle className="w-6 h-6" />}
-              title="โซเชียลมีเดีย"
-              content="@somejeed"
-              gradient="from-rose-500 to-rose-600"
+              icon={<Phone className="w-6 h-6" />}
+              title="โทรศัพท์"
+              content="093-616-8113"
+              link="tel:0936168113"
+              gradient="from-green-500 to-green-600"
+            />
+            
+            <ContactInfoCard
+              icon={<Facebook className="w-6 h-6" />}
+              title="Facebook"
+              content="Vasinee Marit"
+              link="https://www.facebook.com/VasineeMarit"
+              gradient="from-blue-500 to-blue-600"
+            />
+
+            <ContactInfoCard
+              icon={<Instagram className="w-6 h-6" />}
+              title="Instagram"
+              content="@ilittlee.ii"
+              link="https://www.instagram.com/ilittlee.ii"
+              gradient="from-rose-500 to-fuchsia-600"
             />
             
             <ContactInfoCard
               icon={<MapPin className="w-6 h-6" />}
               title="ที่อยู่"
               content="ประเทศไทย 🇹🇭"
-              gradient="from-fuchsia-500 to-fuchsia-600"
+              gradient="from-purple-500 to-purple-600"
             />
           </div>
 
@@ -168,22 +186,43 @@ function ContactInfoCard({
   icon,
   title,
   content,
+  link,
   gradient,
 }: {
   icon: React.ReactNode;
   title: string;
   content: string;
+  link?: string;
   gradient: string;
 }) {
-  return (
-    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-pink-100">
+  const CardContent = () => (
+    <>
       <div
         className={`w-12 h-12 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center text-white mb-4`}
       >
         {icon}
       </div>
       <h3 className="text-lg font-bold mb-1 text-gray-800">{title}</h3>
-      <p className="text-gray-600">{content}</p>
+      <p className="text-gray-600 break-words">{content}</p>
+    </>
+  );
+
+  if (link) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-pink-100 cursor-pointer"
+      >
+        <CardContent />
+      </a>
+    );
+  }
+
+  return (
+    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-pink-100">
+      <CardContent />
     </div>
   );
 }
