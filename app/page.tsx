@@ -15,7 +15,7 @@ export default function Home() {
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 via-pink-600 to-rose-600 bg-clip-text text-transparent leading-tight">
             สวัสดี! ฉันชื่อ
             <br />
-            somejeed 💖
+            Vasinee Marit 💖
           </h1>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
